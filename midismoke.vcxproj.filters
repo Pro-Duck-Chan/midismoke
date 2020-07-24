@@ -16,6 +16,9 @@
     <Filter Include="Source Files\shaders">
       <UniqueIdentifier>{8a1e67f2-6a03-4f51-93c6-f81069668c31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="License">
+      <UniqueIdentifier>{fad207a3-e053-46b7-a802-5b5d5b9902e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\midismoke.cpp">
@@ -38,26 +41,6 @@
     <ClInclude Include="src\utilities.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="src\shaders\add.frag">
-      <Filter>Source Files\shaders</Filter>
-    </None>
-    <None Include="src\shaders\add.geom">
-      <Filter>Source Files\shaders</Filter>
-    </None>
-    <None Include="src\shaders\add.vert">
-      <Filter>Source Files\shaders</Filter>
-    </None>
-    <None Include="src\shaders\advect.frag">
-      <Filter>Source Files\shaders</Filter>
-    </None>
-    <None Include="src\shaders\blur.frag">
-      <Filter>Source Files\shaders</Filter>
-    </None>
-    <None Include="src\shaders\buoyancy.frag">
-      <Filter>Source Files\shaders</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="src\shaders\composite.frag">
@@ -97,6 +80,33 @@
       <Filter>Source Files\shaders</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="src\shaders\vorticityforce.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Dependencies\GLEW\GLEW LICENSE.txt">
+      <Filter>License</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Dependencies\GLFW\GLFW COPYING.txt">
+      <Filter>License</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="LICENSE.txt">
+      <Filter>License</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\buoyancy.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\add.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\add.geom">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\add.vert">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\advect.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\blur.frag">
       <Filter>Source Files\shaders</Filter>
     </CopyFileToFolders>
   </ItemGroup>
