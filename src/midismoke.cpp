@@ -222,7 +222,6 @@ void setup() {
 	phin1hatTexture = build3DTexture(GL_RGBA16F, GL_RGBA, SIMULATION_WIDTH, SIMULATION_HEIGHT, SIMULATION_DEPTH, GL_HALF_FLOAT, emptyData, GL_CLAMP_TO_EDGE, GL_LINEAR);
 	phinhatTexture = build3DTexture(GL_RGBA16F, GL_RGBA, SIMULATION_WIDTH, SIMULATION_HEIGHT, SIMULATION_DEPTH, GL_HALF_FLOAT, emptyData, GL_CLAMP_TO_EDGE, GL_LINEAR);
 	vorticityTexture = build3DTexture(GL_RGBA16F, GL_RGBA, SIMULATION_WIDTH, SIMULATION_HEIGHT, SIMULATION_DEPTH, GL_HALF_FLOAT, emptyData, GL_CLAMP_TO_EDGE, GL_LINEAR);
-
 	transparencyTexture = build3DTexture(GL_RGBA16F, GL_RGBA, SIMULATION_WIDTH, SIMULATION_HEIGHT, SIMULATION_DEPTH, GL_HALF_FLOAT, emptyData, GL_CLAMP_TO_EDGE, GL_LINEAR);
 
 	delete[] emptyData;
@@ -238,7 +237,7 @@ void setup() {
 	makePerspectiveMatrix(projectionMatrix, static_cast<float>(PI * FOV_IN_DEGREES / 180.0), static_cast<float>(WINDOW_WIDTH) / static_cast<float>(WINDOW_HEIGHT), 0.1f, 1000.0f);
 
 	GLuint renderingVertexShader = buildShaderFromFile(GL_VERTEX_SHADER, "shaders/rendering.vert");
-	GLuint renderingFragmentShader = buildShader(GL_FRAGMENT_SHADER, ("#define RAY_STEPS " + std::to_string(RENDERING_STEPS) + " \n" + loadStringFromFile("shaders/rendering.frag")).c_str());
+	GLuint renderingFragmentShader = buildShader(GL_FRAGMENT_SHADER, ("#version 440\n#define RAY_STEPS " + std::to_string(RENDERING_STEPS) + " \n" + loadStringFromFile("shaders/rendering.frag")).c_str());
 	GLuint volumeVertexShader = buildShaderFromFile(GL_VERTEX_SHADER, "shaders/volume.vert");
 	GLuint volumeGeometryShader = buildShaderFromFile(GL_GEOMETRY_SHADER, "shaders/volume.geom");
 	GLuint jacobiFragmentShader = buildShaderFromFile(GL_FRAGMENT_SHADER, "shaders/jacobi.frag");
@@ -249,8 +248,7 @@ void setup() {
 	GLuint subtractFragmentShader = buildShaderFromFile(GL_FRAGMENT_SHADER, "shaders/subtract.frag");
 	GLuint vorticityFragmentShader = buildShaderFromFile(GL_FRAGMENT_SHADER, "shaders/vorticity.frag");
 	GLuint vorticityForceFragmentShader = buildShaderFromFile(GL_FRAGMENT_SHADER, "shaders/vorticityforce.frag");
-	GLuint transparencyFragmentShader = buildShader(GL_FRAGMENT_SHADER, ("#define RAY_STEPS " + std::to_string(TRANSPARENCY_STEPS) + " \n" + loadStringFromFile("shaders/transparency.frag")).c_str());
-
+	GLuint transparencyFragmentShader = buildShader(GL_FRAGMENT_SHADER, ("#version 440\n#define RAY_STEPS " + std::to_string(TRANSPARENCY_STEPS) + " \n" + loadStringFromFile("shaders/transparency.frag")).c_str());
 	renderingProgram = buildProgram(renderingVertexShader, renderingFragmentShader);
 	jacobiProgram = buildProgram(volumeVertexShader, volumeGeometryShader, jacobiFragmentShader);
 	advectProgram = buildProgram(volumeVertexShader, volumeGeometryShader, advectFragmentShader);
@@ -262,10 +260,7 @@ void setup() {
 	vorticityForceProgram = buildProgram(volumeVertexShader, volumeGeometryShader, vorticityForceFragmentShader);
 	transparencyProgram = buildProgram(volumeVertexShader, volumeGeometryShader, transparencyFragmentShader);
 	compositeProgram = buildProgram(buildShaderFromFile(GL_VERTEX_SHADER, "shaders/fullscreen.vert"), buildShaderFromFile(GL_FRAGMENT_SHADER, "shaders/composite.frag"));
-	blurProgram = buildProgram(buildShaderFromFile(GL_VERTEX_SHADER, "shaders/fullscreen.vert"),
-		buildShader(GL_FRAGMENT_SHADER, (
-		"#define BLUR_WIDTH " + std::to_string(BLUR_WIDTH) + " \n" +
-		"#define BLUR_STEP " + std::to_string(BLUR_STEP) + " \n" + loadStringFromFile("shaders/blur.frag")).c_str()));
+	blurProgram = buildProgram(buildShaderFromFile(GL_VERTEX_SHADER, "shaders/fullscreen.vert"), buildShader(GL_FRAGMENT_SHADER, ("#version 440\n#define BLUR_WIDTH " + std::to_string(BLUR_WIDTH) + " \n" + "#define BLUR_STEP " + std::to_string(BLUR_STEP) + " \n" + loadStringFromFile("shaders/blur.frag")).c_str()));
 	addProgram = buildProgram(buildShaderFromFile(GL_VERTEX_SHADER, "shaders/add.vert"), buildShaderFromFile(GL_GEOMETRY_SHADER, "shaders/add.geom"), buildShaderFromFile(GL_FRAGMENT_SHADER, "shaders/add.frag"));
 
 	glGenFramebuffers(1, &simulationFramebuffer);

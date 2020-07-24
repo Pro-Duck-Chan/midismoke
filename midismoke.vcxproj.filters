@@ -13,36 +13,91 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\shaders">
+      <UniqueIdentifier>{8a1e67f2-6a03-4f51-93c6-f81069668c31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="glew.h">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="src\midismoke.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RtMidi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\glew.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\RtMidi.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="glfw3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RtMidi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utilities.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="wglew.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\utilities.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="glew.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="midismoke.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RtMidi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utilities.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <None Include="src\shaders\add.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="src\shaders\add.geom">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="src\shaders\add.vert">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="src\shaders\advect.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="src\shaders\blur.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="src\shaders\buoyancy.frag">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="src\shaders\composite.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\divergence.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\fullscreen.vert">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\jacobi.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\maccormack.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\rendering.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\rendering.vert">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\subtract.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\transparency.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\volume.geom">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\volume.vert">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\vorticity.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\vorticityforce.frag">
+      <Filter>Source Files\shaders</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>

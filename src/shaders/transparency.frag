@@ -1,5 +1,3 @@
-#version 440
-
 precision highp float;
 
 varying float v_layer;

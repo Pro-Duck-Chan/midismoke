@@ -14,7 +14,7 @@
 [Rr]eleases/
 x64/
 x86/
-build/
+[Bb]uild/
 bld/
 [Bb]in/
 [Oo]bj/
@@ -159,6 +159,7 @@ ClientBin/
 *.pfx
 *.publishsettings
 node_modules/
+.vs
 
 # RIA/Silverlight projects
 Generated_Code/
